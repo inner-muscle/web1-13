@@ -9,7 +9,7 @@ function setCookie(c_name,value,expiredays)
   s += "; path="+ location.pathname;
   if(expiredays)
   {
-    s += "; expires=" +=exdate+"; ";
+    s += "; expires=" +exdate+"; ";
   }
   else
   {
