@@ -41,21 +41,7 @@ else
 var current_time = new Date();
 setCookie('lastDate', current_time.toString(),7);
 
-function getFileName()
-{
-  return window.location.href.split('/').pop();
-}
 
-var filename = getFileName();
-var opt;
-if(filename === 'other.html')
-{
-  opt = document.querySelector('option[value="other.html"]');
-}
-else
-{
-  opt = document.querySelector('option[value="index.html"]');
-}
 
 document.getElementById('remove_cookie').onsubmit = function()
 {
@@ -92,6 +78,23 @@ var separate_time=function(time)
   var days = Math.floor(time /1000 / 60 / 60 /24);
   return [sec,min,hours,days];
 }
+
+function getFileName()
+{
+  return window.location.href.split('/').pop();
+}
+
+var filename = getFileName();
+var opt;
+if(filename === 'other.html')
+{
+  opt = document.querySelector('option[value="other.html"]');
+}
+else
+{
+  opt = document.querySelector('option[value="index.html"]');
+}
+opt.selected = true;
 
 document.getElementById('form').select.onchange = function()
 {
