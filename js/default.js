@@ -41,6 +41,11 @@ else
 var current_time = new Date();
 setCookie('lastDate', current_time.toString(),7);
 
+document.getElementById('remove_coolie').onsubmit = function()
+{
+  setCookie('lastDate', "", 0);
+}
+
 function getCookie(c_name)
 {
   var st="";
