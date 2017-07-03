@@ -56,7 +56,7 @@ function getCookie(c_name)
     if(st!=-1)
     {
       st=st+c_name.length+1;
-      ed=document.coolie.indexOf(";",st);
+      ed=document.cookie.indexOf(";",st);
       if(ed==-1)
       {
         ed=document.cookie.length;
