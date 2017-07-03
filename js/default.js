@@ -43,13 +43,11 @@ function getCookie(c_name)
 
 var separate_time=function(time)
 {
-  var sec = time.getSeconds();
-  var min =time.getMinutes();
-  var hours = time.getHours();
-  var days = time.getDate();
-  var month = time.getMonth();
-  var year = time.getFullYear();
-  return [sec,min,hours,days,month,year];
+  var sec = time.getSeconds((time / 1000) % 60);
+  var min =time.getMinutes((time / 1000 / 60) % 60);
+  var hours = time.getHours((time / 1000 / 60 / 60) % 24);
+  var days = time.getDate(time /1000 / 60 / 60 /24);
+  return [sec,min,hours,days];
 }
 
 document.getElementById('form').select.onchange = function()
